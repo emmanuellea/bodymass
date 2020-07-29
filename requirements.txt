@@ -1,5 +1,4 @@
 
-Python
 flask
 gunicorn
 pandas
