@@ -18,19 +18,12 @@ def page():
     features=dataset[['Height M', 'Weight kg', '%Fat']]
     label=dataset['BMI']
 
-    x_train, x_test, y_train, y_test=train_test_split(features, label, test_size=0.25, random_state=0)
+    x_train, x_test, y_train, y_test=train_test_split(features, label, test_size=0.25, random_state=10)
 
     model=LinearRegression()
     model.fit(x_train, y_train)
-    model.predict(x_test)
+
     
-
-    '''
-    sample=[[223,54,76]]
-    predicted=model.predict(sample)[0]
-    return render_template('page.html', result=predicted)
-
-    '''
     if request.method=='POST':
         height=(int)(request.form['height'])
         weight=(int)(request.form['weight'])
@@ -39,8 +32,12 @@ def page():
         predicted=model.predict(input_variables)[0]
         return render_template('page.html', result=round(predicted,3))
 
+if __name__=='__main__':
+    app.run(debug=True)
     
-app.run(debug=True)
+      
+    
+
     
 
 
