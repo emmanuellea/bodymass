@@ -33,7 +33,7 @@ def page():
         return render_template('https://github.com/emmanuellea/bodymass/blob/master/page.html', result=round(predicted,3))
 
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(host='localhost')
     
       
     
