@@ -9,7 +9,7 @@ app=Flask("my app")
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('https://github.com/emmanuellea/bodymass/blob/master/index.html')
 
 @app.route('/page', methods=['POST'])
 def page():
@@ -30,7 +30,7 @@ def page():
         fat=(int)(request.form['fat'])
         input_variables = [[height, weight, fat]]
         predicted=model.predict(input_variables)[0]
-        return render_template('page.html', result=round(predicted,3))
+        return render_template('https://github.com/emmanuellea/bodymass/blob/master/page.html', result=round(predicted,3))
 
 if __name__=='__main__':
     app.run(debug=True)
