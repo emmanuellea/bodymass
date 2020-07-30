@@ -12,7 +12,7 @@ def index():
     return render_template('index.html')
 
 if __name__=='__main__':
-    app.run(host='localhost')
+    app.run(threaded=True, port=5000)
     
 '''''
 @app.route('/page', methods=['POST'])
