@@ -11,6 +11,10 @@ app=Flask("my app")
 def index():
     return render_template('https://github.com/emmanuellea/bodymass/blob/master/index.html')
 
+if __name__=='__main__':
+    app.run()
+    
+'''''
 @app.route('/page', methods=['POST'])
 def page():
 
@@ -34,6 +38,8 @@ def page():
 
 if __name__=='__main__':
     app.run(host='localhost')
+    
+    '''
     
       
     
