@@ -14,7 +14,7 @@ def index():
 @app.route('/page', methods=['POST'])
 def page():
 
-    dataset=pd.read_csv('Predict_BMI.csv')
+    dataset=pd.read_csv('https://github.com/emmanuellea/bodymass/blob/master/Predict_BMI.csv')
     features=dataset[['Height M', 'Weight kg', '%Fat']]
     label=dataset['BMI']
 
